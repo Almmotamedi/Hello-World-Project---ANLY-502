@@ -1,0 +1,10 @@
+setwd("C:/Users/Gayathri Vinoth/Desktop/Work")
+
+dataprofit <- read.csv("Profit & Number of Defective Items.csv")
+
+plot(x = dataprofit$Number.of.Defective.Items, y =dataprofit$Profit,
+       +      xlab = "Number.of.Defective.Items",
+       +      ylab = "Profit",
+       +      main = "Profit vs Defective Items")
+
+pairs(~Number.of.Defective.Items+Profit,data = dataprofit, main = "Scatterplot Matrix")
