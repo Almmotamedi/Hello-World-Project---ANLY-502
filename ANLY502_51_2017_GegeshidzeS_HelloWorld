@@ -1,6 +1,0 @@
-setwd("C:/Users//Roxanne/Desktop/Work")
-data1 <- read.csv("data.txt")
-ggplot(data1, aes(data1$Profit, data1$Number.of.Defective.Items)) +
-  geom_point() +
-  ylab("Number of Defective Items") + xlab("Profit") +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1))
