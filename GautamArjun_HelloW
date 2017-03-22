@@ -1,0 +1,24 @@
+library(ggplot2)
+library(sandwich)
+library(nlme)
+library(reshape)
+library(plyr)
+
+x <- read.csv("file:///C:/Users/GARJUN.HATFIELDLAN/Desktop/Analytics Method R/Assignments/1st week/Hello world/Workbook_Example_Bivariate_dataset.csv")
+plot(x, main ="Bivariate Dataset", type ="p", xlab = "Profit", ylab ="No of Defective items", col ="green", ylim = c(100,1000), xlim = c(0,1000), axes = FALSE)
+axis(1, at = seq(0, 1000, by = 50), las=2, col.axis ="brown")
+axis(2, at = seq(0, 1000, by = 100), las=1, col.axis = "brown")
+
+i <- c(x$Profit)
+j <- c(x$Number.of.Defective.Items)
+k <- data.frame(x=i, y=j)
+plot(k)
+ggplot(k, aes(i, j)) + geom_point() + geom_point(data = k, colour = 'red', size = 2)
+
+
+a <- ts((x$Profit), freq=12)
+b <- ts((x$Number.of.Defective.Items), freq=12)
+z <- data.frame(x = a, y = b)
+plot(z)
+par(mfrow=c(1,1))
+plot.ts(z, main = "Bivariate Dataset", type ="l", xlab = "Profit", ylab ="No of Defective items", col ="green", ylim = c(100,1000), xlim = c(0,1000))
