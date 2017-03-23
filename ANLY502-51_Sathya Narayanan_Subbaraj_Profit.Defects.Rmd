@@ -1,0 +1,75 @@
+---
+title: 'ANLY 502-51: GitHub - Hello World'
+author:
+- Sathya Narayanan Subbaraj
+- Harrisburg University Student ID - 189745
+output:
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,tidy.opts=list(width.cutoff=70),tidy=TRUE, warning = FALSE)
+
+```
+<br>
+
+##### Read Bivariate dataset
+<br>
+```{r }
+# Read dataset 
+Profit.Defects <- read.csv('Workbook_Example_Bivariate_dataset.csv')
+```
+<br>
+
+##### Dataset Summary, Structure & Variables
+<br>
+```{r }
+# Dataset Summary
+summary(Profit.Defects)
+
+# Dataset Structure
+str(Profit.Defects)
+
+# Dataset variables
+colnames(Profit.Defects)
+
+```
+<br>
+
+##### Scatter Plot using Plot(): Profit vs. Number of Defective Items.
+<br>
+```{r }
+# Scatter Plot using Plot()
+Profit.Defects.plot1 <- plot(x = Profit.Defects$Number.of.Defective.Items, y = Profit.Defects$Profit, type = "p", 
+     main = " Profit vs. Number of Defective Items", 
+     xlab = "Number of Defective Items" , 
+     ylab = "Profit")
+
+Profit.Defects.plot1
+
+```
+<br>
+
+##### Scatter Plot using ggplot(): Profit vs. Number of Defective Items.
+<br>
+```{r }
+# Scatter Plot using ggplot()
+library(ggplot2)
+
+Profit.Defects.plot2 <- ggplot(data = Profit.Defects, aes(x = Profit.Defects$Number.of.Defective.Items, 
+                                  y = Profit.Defects$Profit)) +
+      geom_point(color = 'steelblue') +
+      ggtitle("Profit vs Number of Defective Items") +
+      theme(plot.title = element_text(hjust = 0.5)) +
+      xlab("Number of Defective Items") +
+      ylab("Profit")
+
+Profit.Defects.plot2
+
+```
+<br>
+From the scatter plots, it can be seen that there is a negative relationship between 'Profit' and 'Number of Defective Items'. As the number of defective items increase, the profit declines.
+<br>
+<br>
+
+
