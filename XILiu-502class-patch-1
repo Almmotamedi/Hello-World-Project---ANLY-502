@@ -1,0 +1,31 @@
+##ANLY 502 Assignment 
+##Student: Xi Liu
+
+##import data file
+Workbook_Example_Bivariate_dataset <- read.csv("~/Desktop/Workbook_Example_Bivariate_dataset.csv")
+View(Workbook_Example_Bivariate_dataset)
+##summary of the dataset
+summary(Workbook_Example_Bivariate_dataset)
+      Profit   Number.of.Defective.Items
+ 442     : 2   Min.   :  8.0            
+ 1,078.00: 1   1st Qu.:275.8            
+ 1,084.00: 1   Median :506.0            
+ 1,114.00: 1   Mean   :504.9            
+ 113     : 1   3rd Qu.:716.2            
+ 150     : 1   Max.   :974.0            
+ (Other) :45   
+
+##create a barplot
+barplot(table(Workbook_Example_Bivariate_dataset$Profit))
+x=Workbook_Example_Bivariate_dataset$Profit
+y=Workbook_Example_Bivariate_dataset$Number.of.Defective.Items
+plot(x,y)
+
+##create a scatterplot
+scatterp.1 <- plot(x=Workbook_Example_Bivariate_dataset$Number.of.Defective.Items, 
+y=Workbook_Example_Bivariate_dataset$Profit, 
+type="p", 
+main = "Profit vs. Number of Defective Items", 
+xlab = "Number of Defective Items", 
+ylab="Profit" )
+ 
