@@ -1,0 +1,11 @@
+#Bivariate dataset
+Profit_Defects <- read.csv('Workbook_Example_Bivariate_dataset.csv')
+
+#Structure of dataset 
+str(Profit_Defects)
+
+#Scatter Plot: Profit vs. Number of Defective Items.
+plot1 <- plot(x = Profit_Defects$Number.of.Defective.Items, y = Profit_Defects$Profit, type = "p", 
+     xlab = "Number of Defective Items" , 
+     ylab = "Profit")
+
