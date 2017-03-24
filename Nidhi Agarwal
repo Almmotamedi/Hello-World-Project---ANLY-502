@@ -9,3 +9,4 @@ plot1 <- plot(x = Profit_Defects$Number.of.Defective.Items, y = Profit_Defects$P
      xlab = "Number of Defective Items" , 
      ylab = "Profit")
 
+#
