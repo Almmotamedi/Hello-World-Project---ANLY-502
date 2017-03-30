@@ -14,7 +14,7 @@ colnames(Profit.Defects)
 
 # Scatter Plot using Plot(): Profit vs. Number of Defective Items.
 Profit.Defects.plot1 <- plot(x = Profit.Defects$Number.of.Defective.Items, y = Profit.Defects$Profit, type = "p", 
-     main = " Profit vs. Number of Defective Items", 
+     main = "Profit vs. Number of Defective Items", 
      xlab = "Number of Defective Items" , 
      ylab = "Profit")
 
