@@ -1,3 +1,5 @@
+#sweta yadav- assignment 2
+
 mytable <- read.csv("C:/Users/Sweta/502/Workbook_Example_Bivariate_dataset.csv")
 
 mytable$Profit <- as.numeric( sub(",", "", mytable$Profit))
